@@ -1,8 +1,8 @@
 /*
+ * @lc app=leetcode.cn id=1 lang=javascript
+ * 题目链接： https://leetcode-cn.com/problems/two-sum/
  * [1] 两数之和
  */
-
-// 题目链接： https://leetcode-cn.com/problems/two-sum/
 
 /**
  * @param {number[]} nums
@@ -36,3 +36,4 @@ var twoSum = function(nums, target) {
     }
     return [];
 };
+// 题目变种输出多组符合条件的下标/值
