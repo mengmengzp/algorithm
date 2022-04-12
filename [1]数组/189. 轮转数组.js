@@ -14,7 +14,7 @@
  * @param {number} k
  * @return {void} Do not return anything, modify nums in-place instead.
  */
- var rotate = function(nums, k) {
+var rotate = function(nums, k) {
     // k需要取模，防止超过数组长度
     k %= nums.length;
     // 翻转函数
