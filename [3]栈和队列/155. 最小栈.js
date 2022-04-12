@@ -7,7 +7,8 @@
 // @lc code=start
 
 var MinStack = function() {
-
+    this.stack = [];
+    this.MinStack = [];
 };
 
 /** 
@@ -15,13 +16,20 @@ var MinStack = function() {
  * @return {void}
  */
 MinStack.prototype.push = function(val) {
-
+    this.stack.push(val);
+    if (this.MinStack.length === 0 || this.MinStack[this.MinStack.length - 1] > val) {
+        this.MinStack.push(val);
+    }
 };
 
 /**
  * @return {void}
  */
 MinStack.prototype.pop = function() {
+    let out = this.stack.pop();
+    if (this.MinStack[this.MinStack.length - 1] === out) {
+        this.MinStack.pop();
+    }
 
 };
 
@@ -29,14 +37,14 @@ MinStack.prototype.pop = function() {
  * @return {number}
  */
 MinStack.prototype.top = function() {
-
+    return this.stack[this.stack.length - 1]
 };
 
 /**
  * @return {number}
  */
 MinStack.prototype.getMin = function() {
-
+    return this.MinStack[this.MinStack.length - 1]
 };
 
 /**

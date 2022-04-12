@@ -9,7 +9,7 @@
  * @param {number[]} heights
  * @return {number}
  */
- var largestRectangleArea = function(heights) {
+var largestRectangleArea = function(heights) {
 
 };
 // @lc code=end
