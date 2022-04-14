@@ -18,10 +18,15 @@
  * @return {boolean}
  */
 var hasCycle = function(head) {
+    if (!head || !head.next) return false;
+    // 慢指针
     let slow = head;
+    // 快指针
     let fast = head;
-    while (fast && fast.next && fast.next.next) {
+    while(fast.next && fast.next.next) {
+        // 慢指针走一步
         slow = slow.next;
+        // 快指针走两步
         fast = fast.next.next;
         if (slow === fast) {
             return true;

@@ -17,15 +17,21 @@
  * @return {ListNode}
  */
 var reverseList = function(head) {
-    let [prev, current] = [null, head];
-    while (current) {
-        [current.next, prev, current] = [prev, current, current.next];
-        // 数组解构可以省略中间变量，等价于下面
-        // let temp = current.next;
-        // current.next = prev;
-        // prev = current;
-        // current = temp;
+    // 单链表空判断
+    if (!head) return null;
+    // 设置空指针
+    let prev = null;
+    while(head) {
+        // 保留下一个结点
+        let next = head.next;
+        // 将头指针指向null
+        head.next = prev;
+        // prev挪到头指针
+        prev = head;
+        // 头指针挪到下一个指针，防止丢失
+        head = next;
     }
     return prev;
 };
+// @lc code=end
 
