@@ -1,15 +1,4 @@
-let dd = (preorder, inorder) => {
-    let result = [];
-    let dfs = (pre, ino) => {
-        if (pre.length === 0) {
-            return;
-        }
-        result.push(pre[0]);
-        let pos = ino.indexOf(pre[0]);
-        dfs([...pre.slice(0, pos), [...ino.slice()])
-
-    }
-}/*
+/*
  * @lc app=leetcode.cn id=105 lang=javascript
  *
  * [105] 从前序与中序遍历序列构造二叉树
