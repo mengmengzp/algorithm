@@ -22,11 +22,14 @@ var largestValues = function(root) {
     let dfs = (root, depth) => {
         if (!root) return;
         if (result[depth] !== undefined) {
+            // 取当前层最大的值作为该层的元素
             result[depth] = Math.max(result[depth], root.val);
         } else {
             result[depth] = root.val;
         }
+        // 递归左子树
         dfs(root.left, depth + 1);
+        // 递归右子树
         dfs(root.right, depth + 1);
     }
     dfs(root, 0);

@@ -11,16 +11,23 @@
  * @return {character[][]}
  */
 var updateBoard = function(board, click) {
+    // 数组解构
     let [clickX, clickY] = click;
+    // 如果当前值为M，直接改写x返回即可
     if (board[clickX][clickY] === 'M') {
         board[clickX][clickY] = 'X';
         return board;
     }
+    // 矩阵行数
     let xLength = board.length;
+    // 矩阵列数
     let yLength = board[0].length;
+    // 当前元素x轴移动方向，依次上方顺时针
     let xDirection = [0, 1, 1, 1, 0, -1, -1, -1 ];
+    // 当前元素y轴移动方向，依次上方顺时针
     let yDirection = [1, 1, 0, -1, -1, -1, 0, 1];
-    function isOut(x, y){
+    // 是否越界
+    let isOut =(x, y) => {
         return x < 0 || y < 0 || x >= xLength || y >= yLength;
     }
     let dfs = (x, y) => {
@@ -46,7 +53,7 @@ var updateBoard = function(board, click) {
                     aroundPoints.push([aroundX, aroundY]);
                 }
         
-                // 如果当前坐标周围有地 雷，则统计数量
+                // 如果当前坐标周围有地雷，则统计数量
                 if (board[aroundX][aroundY] === 'M') {
                     count++;
                 }
@@ -58,7 +65,7 @@ var updateBoard = function(board, click) {
         if (count === 0) {
             board[x][y] = 'B';
     
-        // 继续查找周围的坐标是否需要标记地 雷数量
+        // 继续查找周围的坐标是否需要标记地雷数量
             for (let i = 0; i < aroundPoints.length; i++) {
                 dfs(...aroundPoints[i]);
             }

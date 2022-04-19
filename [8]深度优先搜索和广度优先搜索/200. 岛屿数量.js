@@ -16,9 +16,13 @@ var numIslands = function(grid) {
             return;
         }
         grid[i][j] = '0';
+        // 向左扩散
         dfs(i-1, j);
+        // 向下扩散
         dfs(i, j-1);
+        // 向右扩散
         dfs(i+1, j);
+        // 向上扩散
         dfs(i, j+1);
     }
     for (let i = 0; i < grid.length; i++) {
