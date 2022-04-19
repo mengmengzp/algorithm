@@ -11,9 +11,9 @@
  * @return {number}
  */
 var robotSim = function(commands, obstacles) {
-    // 当前坐标x轴可行走的方向
+    // 当前坐标x轴可行走的方向，依次从上方顺时针
     let directionX = [0, 1, 0, -1];
-    // 当前坐标y轴可行走的方向
+    // 当前坐标y轴可行走的方向，依次从上方顺时针
     let directionY = [1, 0, -1, 0];
     // 方向长度
     let directionLength = directionX.length;

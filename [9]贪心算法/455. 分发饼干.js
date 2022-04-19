@@ -16,6 +16,7 @@ var findContentChildren = function(g, s) {
     s.sort((a,b) => a-b);
     let j = 0, res = 0;
     for (let num of s) {
+        // 如果饼干大于或等于当前胃口表示够分
         if (num >= g[j]) {
             res++;
             j++;

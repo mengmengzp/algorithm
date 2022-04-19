@@ -12,6 +12,7 @@
 var maxProfit = function(prices) {
     let max = 0;
     for (let i = 1; i < prices.length; i++) {
+        // 如果当天比前一天大，就锁住收益
         if (prices[i] > prices[i-1]) {
             max += Math.max(prices[i] - prices[i-1]);
         }
